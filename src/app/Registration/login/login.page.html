@@ -1,0 +1,67 @@
+<ion-app>
+  <ion-content>
+    <!-- Logo -->
+    <app-logo></app-logo>
+
+    <!-- header -->
+    <ion-text class="ion-text-center">
+      <h3>Log In Now</h3>
+      <p>Please login to continue using our app</p>
+    </ion-text>
+
+    <ion-text class="ion-text-center">
+      <h5 class="error" *ngIf="showAlert">Login failed! Please ensure the email and password are valid.</h5>
+    </ion-text>
+    
+    <!-- Form -->
+    <ion-list class="ion-margin">
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+
+        <!-- Email Input Field -->
+        <ion-input class="ion-padding ion-margin-vertical" formControlName="email" type="email" placeholder="Email">
+        </ion-input>
+
+        <!-- Email Error -->
+        <span class="error"
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.required">Email address is
+          required</span>
+
+        <span class="error"
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.email">Email address is not
+          in the correct format, try
+          something like 'you@yours.com'</span>
+
+        <!-- Password Input Field -->
+        <ion-input class="ion-padding ion-margin-vertical" type="password" placeholder="Password"
+          formControlName="password">
+        </ion-input>
+
+        <!-- Password Error -->
+        <span class="error"
+          *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required">Password is
+          required</span>
+
+        <span class="error"
+          *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.pattern">Password
+          should have minimum 6 characters, at least 1 uppercase letter, 1 lowercase
+          letter and 1 number</span>
+
+        <!-- Submit Button -->
+        <ion-button type="submit" [disabled]="loginForm.invalid" class="ion-margin" size="block">Log In</ion-button>
+      </form>
+
+      <!-- Forgot Password -->
+      <a routerLink="/forgot-password" class="ion-float-right">Forgot Password?</a>
+    </ion-list>
+
+    <!-- SignUp -->
+    <ion-text class="ion-text-center">
+      <p>Don't have an account ? <ion-text><b routerLink="/signup">Sign Up</b></ion-text>
+      </p>
+    </ion-text>
+
+    <!-- Social Media -->
+    <app-social-media></app-social-media>
+
+  </ion-content>
+</ion-app>

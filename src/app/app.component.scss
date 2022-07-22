@@ -1,0 +1,21 @@
+ion-icon.icon-button {
+  background: rgb(164, 94, 230);
+  color: white;
+  border-radius: 50%;
+}
+
+ion-icon {
+  color: rgb(164, 94, 230);
+}
+
+.inner-center-btn {
+  position: absolute;
+  left: calc(50% - 35px);
+  bottom: 20px;
+  font-size: 70px;
+}
+
+.bottom-tab-bar {
+  --background: transparent;
+  --border: 0;
+}

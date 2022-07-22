@@ -1,0 +1,62 @@
+<ion-app>
+  <ion-content>
+    <!-- Logo -->
+    <app-logo></app-logo>
+
+    <!-- header -->
+    <ion-text class="ion-text-center">
+      <h3>Sign Up Now</h3>
+      <p>Please fill the details and create account</p>
+    </ion-text>
+
+    <!-- Form -->
+    <ion-list class="ion-margin">
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)">
+
+        <!-- Name Input Field -->
+        <ion-input class="ion-padding ion-margin-vertical" formControlName="name" placeholder="Fullname"></ion-input>
+
+        <!-- Name Error -->
+        <span class="error" *ngIf="signUpForm.controls['name'].invalid && signUpForm.controls['name'].touched ">Name
+          Field is empty</span>
+
+        <!-- Email Input Field -->
+        <ion-input class="ion-padding ion-margin-vertical" formControlName="email" type="email" placeholder="Email">
+        </ion-input>
+
+        <!-- Email Error -->
+        <span class="error" *ngIf="signUpForm.controls['email'].touched && signUpForm.controls['email'].errors?.required">Email address is required</span>
+
+        <span class="error" *ngIf="signUpForm.controls['email'].touched && signUpForm.controls['email'].errors?.email">Email address is not in the correct format, try
+          something like 'you@yours.com'</span>
+
+        <!-- Password Input Field -->
+        <ion-input class="ion-padding ion-margin-vertical" formControlName="password" type="Password"
+          placeholder="Password">
+        </ion-input>
+
+        <!-- Password Error -->
+        <span class="error" *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].errors?.required">Password is required</span>
+
+        <span class="error" *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].errors?.pattern">Password should have minimum 6 characters, at least 1 uppercase letter, 1 lowercase
+          letter and 1 number</span><br>
+
+        <small>Password must be atleast 6 characters</small><br>
+
+        <!-- button -->
+        <ion-button type="submit" class="ion-margin" [disabled]="signUpForm.invalid" size="block">
+          Register</ion-button>
+      </form>
+    </ion-list>
+
+    <!-- Login -->
+    <ion-text class="ion-text-center">
+      <p>Already have an account ? <ion-text color="danger"><b routerLink="/login">Log In</b></ion-text>
+      </p>
+    </ion-text>
+
+    <!-- Social Media -->
+    <app-social-media></app-social-media>
+
+  </ion-content>
+</ion-app>

@@ -1,0 +1,26 @@
+ion-content{
+  font-size: 0.8em;
+}
+
+// header
+h3 {
+  font-weight: bold;
+}
+
+// Form
+ion-input {
+  border: 1px solid grey;
+}
+
+ion-button {
+  --background: rgb(235, 91, 39);
+}
+
+.error{
+  color: red;
+}
+
+// Login
+b {
+  color: rgb(235, 91, 39);
+}

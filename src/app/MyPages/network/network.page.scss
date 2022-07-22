@@ -1,0 +1,65 @@
+.header {
+  padding: 20px;
+  margin-top: 60px;
+  height: 100%;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.network {
+  margin: 50px 20px;
+  border-radius: 15px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.network ion-item {
+  --background: rgba(252, 249, 249, 0.842);
+}
+
+.icon {
+  height: 27%;
+  width: 40%;
+  background-color: rgb(224, 222, 222);
+}
+
+.sideIcon {
+  height: 25%;
+  width: 5%;
+  background-color: rgb(224, 222, 222);
+}
+
+ion-button {
+  width: 60%;
+  display: flex;
+  margin: 50px auto;
+  --border-radius: 50px;
+}
+
+.wifi {
+  color: grey;
+  font-size:1rem;
+}
+
+.active{
+  border: 3px solid rgb(168, 166, 166);
+}
+
+ion-card{
+  --height:100%;
+}

@@ -1,0 +1,45 @@
+<ion-icon name="chevron-back-outline" size="large" (click)="dismissModal()"></ion-icon>
+
+<ion-content>
+  <ion-img [src]="weatherIcon"></ion-img>
+  <ion-label>{{weatherDetail?.main}}</ion-label>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-icon class="weatherIcon" name="thermometer-outline" size="large"></ion-icon>
+        <ion-text>Outdoor Temp.</ion-text>
+        <ion-text class="weatherDetail">{{(temperature-273.15).toFixed(0)}} &#176;C</ion-text>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-icon class="weatherIcon" name="options-outline" size="large"></ion-icon>
+        <ion-text>Outdoor PM2.5</ion-text>
+        <ion-text class="weatherDetail">Poor</ion-text>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-icon class="weatherIcon" name="water-outline" size="large"></ion-icon>
+        <ion-text>Outdoor Humidity</ion-text>
+        <ion-text class="weatherDetail">{{humidity}}</ion-text>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-icon class="weatherIcon" name="speedometer-outline" size="large"></ion-icon>
+        <ion-text>Outdoor Air Pressure</ion-text>
+        <ion-text class="weatherDetail">{{pressure}} hPa</ion-text>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-icon class="weatherIcon" name="golf-outline" size="large"></ion-icon>
+        <ion-text>Outdoor Wind Speed</ion-text>
+        <ion-text class="weatherDetail">{{speed}}</ion-text>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

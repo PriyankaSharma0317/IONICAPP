@@ -1,0 +1,81 @@
+// Header title
+.title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+#subtitle {
+  font-size: 0.6rem;
+}
+
+// Nothing to display
+#display {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#add {
+  height: 100px;
+  width: 200px;
+  color: rgb(196, 194, 194);
+}
+
+#btn {
+  width: 50%;
+  display: flex;
+  --border-radius: 50px;
+}
+
+// Display Area
+.room {
+  padding: 5px 5px 5px 10px;
+  margin: 5px;
+}
+
+.title1 {
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+.active {
+  // background: linear-gradient(rgb(164, 94, 230), rgb(149, 149, 182));
+  // color: white;
+}
+
+.icons {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+// Footer
+.footer {
+  font-size: 0.7rem;
+}
+
+// Global
+ion-toggle {
+  --background: #d3d2d2;
+  --background-checked: rgb(58, 199, 133);
+  float: right;
+  --handle-width: 17px;
+  --handle-height: 17px;
+  width: 40px;
+  height: 20px;
+  --handle-spacing: 3px;
+}
+
+#toggleBtn {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+}
+
+ion-card {
+  background-color: #ffffff;
+}

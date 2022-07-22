@@ -1,0 +1,59 @@
+// Header Icon
+.row {
+  margin: 5px 0 10px 0;
+  padding: 20px 0;
+  border: 1px solid rgb(216, 213, 213);
+  background-color: white;
+}
+
+// User Name and image
+#icon {
+    font-size: 50px;
+    color: rgb(230, 59, 88);
+    margin-right: 5px;
+}
+
+#title{
+    display: flex;
+    flex-direction: column;
+}
+
+#setName {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#email{
+    text-transform: lowercase;
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: rgb(160, 158, 158);
+
+}
+
+// Third Party
+.col {
+    margin-bottom: 5px;
+    padding: 15px 0 10px 5px;
+    border: 1px solid rgb(216, 213, 213);
+    background-color: white;
+}
+
+.tools {
+    font-size: 0.6rem;
+}
+
+span{
+    font-size: 0.8rem;
+}
+
+// Others Items
+.icons {
+    margin-right: 20px;
+    color: rgb(31, 52, 53);
+}
+
+.list {
+    font-size: 0.8rem;
+}

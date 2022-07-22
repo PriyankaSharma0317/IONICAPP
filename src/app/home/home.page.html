@@ -1,0 +1,70 @@
+<ion-app>
+    <ion-content color="light">
+        <ion-button (click)="fetchLocation()">Fetch Location</ion-button>
+        <!-- Header Icon -->
+        <ion-card class="ion-no-margin">
+            <ion-item lines="none" class="ion-padding-top">
+                <ion-icon color="tertiary" slot="start" name="person" (click)="openAccountPage()"></ion-icon>
+                <ion-icon color="tertiary" slot="end" size="large" name="add-circle" (click)="openRequestPage()">
+                </ion-icon>
+            </ion-item>
+
+            <!-- Header title -->
+            <ion-card-header>
+                <ion-card-title color="tertiary" class="title ion-no-padding">Hello! {{userName | titlecase}}
+                </ion-card-title>
+                <ion-card-subtitle id="subtitle" class="ion-text-lowercase">Let's manage your smart home
+                </ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+
+        <!-- Nothing to display -->
+        <div id="display" *ngIf="show">
+            <ion-icon id="add" size="large" name="duplicate-outline"></ion-icon>
+            <ion-label class="ion-margin-vertical">No Rooms</ion-label>
+            <ion-button (click)="openRequestPage()" id="btn">Add Room</ion-button>
+        </div>
+
+        <!-- Display Area -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6" *ngFor="let room of addRoom;let i = index">
+                    <ion-card (click)="selectRoom(room,$event)" [ngClass]="toggle[i] ? 'active room' :'room'"
+                        color="light">
+                        <ion-thumbnail>
+                            <ion-img [src]="room.icon" [color]="toggle[i] ? 'light' : 'tertiary'">
+                            </ion-img>
+                        </ion-thumbnail>
+                        <ion-toggle id="toggleBtn" mode="ios" (click)="togglebtn(i,$event)"></ion-toggle>
+                        <ion-card-title class="title1 ion-margin-top">{{room.title|titlecase}}</ion-card-title>
+                        <ion-card-subtitle mode="md" class="title1">{{toggle[i]? 'On' : 'Off'}}</ion-card-subtitle>
+                        <div class="icons">
+                            <ion-icon (click)="editRoom($event,i)" name="create-outline"></ion-icon>
+                            <ion-icon (click)="deleteRoom($event,i)" name="trash-outline"></ion-icon>
+                        </div>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+
+            <!-- Footer -->
+            <div *ngIf="showFooter">
+                <ion-row class="ion-margin-top footer">
+                    <ion-col size="6">Current temperature</ion-col>
+                    <ion-col class="ion-text-end" size="6">Turn On/Off</ion-col>
+                </ion-row>
+                <ion-row class="footer">
+                    <ion-col (click)="presentWeatherModal()" size="6">
+                        <b>{{(temperature-273.15).toFixed(0)}}</b>&#176;C&nbsp;{{weatherDetail?.main}}
+                        <ion-avatar>
+                            <ion-img [src]="weatherIcon"></ion-img>
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-toggle mode="ios" checked></ion-toggle>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-grid>
+    </ion-content>
+    <!-- <app-tab></app-tab> -->
+</ion-app>

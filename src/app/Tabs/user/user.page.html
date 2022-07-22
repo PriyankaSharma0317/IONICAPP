@@ -1,0 +1,73 @@
+<ion-app mode="ios">
+  <ion-content color="light">
+    <!-- Header Icon -->
+    <ion-card class="row">
+      <ion-item lines="none">
+        <ion-icon slot="end" name="scan-outline"></ion-icon>
+        <ion-icon slot="end" name="settings-outline" (click)="openSettingPage()"></ion-icon>
+      </ion-item>
+
+      <!-- User Name and image -->
+      <ion-item lines="none" button class="ion-no-padding ion-no-margin">
+        <ion-icon id="icon" name="person-circle-outline"></ion-icon>
+        <ion-list id="title" (click)="openAccountPage()">
+          <ion-card-title id="setName" (click)="openAccountPage()">{{nickName ? nickName: 'Tap to Set Nickname'}}</ion-card-title>
+          <ion-card-subtitle id="email">{{emailId}}</ion-card-subtitle>
+        </ion-list>
+      </ion-item>
+    </ion-card>
+
+    <!-- Third Party -->
+    <ion-grid>
+      <ion-row class="col">
+        <ion-col size="12">
+          <span class="ion-margin-bottom">Third Party Integration</span>
+        </ion-col>
+
+        <!-- Alexa -->
+        <ion-col>
+          <ion-item lines="none" class="ion-no-padding ion-no-margin">
+            <img src="./assets/images/a.png" height="30px">
+            <ion-label class="tools">Alexa</ion-label>
+          </ion-item>
+        </ion-col>
+
+        <!-- Google -->
+        <ion-col>
+          <ion-item lines="none" class="ion-no-padding ion-no-margin">
+            <img src="./assets/images/g.png" height="20px">
+            <ion-label class="tools">Google Assistant</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Others Items -->
+    <ion-list>
+    <ion-item class="list" lines="none" button>
+      <ion-icon class="icons" name="home-outline"></ion-icon>
+      <ion-label>Home Management</ion-label>
+    </ion-item>
+
+      <ion-item class="list" lines="none" button>
+        <ion-icon class="icons" name="chatbubble-ellipses-outline"></ion-icon>
+        <ion-label>Message Center</ion-label>
+      </ion-item>
+
+      <ion-item class="list" lines="none" button>
+        <ion-icon class="icons" name="book-outline"></ion-icon>
+        <ion-label>FAQ & Feedback</ion-label>
+      </ion-item>
+
+      <ion-item class="list" lines="none" button>
+        <ion-icon class="icons" name="bookmark-outline"></ion-icon>
+        <ion-label>Featured</ion-label>
+      </ion-item>
+
+      <ion-item class="list" lines="none" button>
+        <ion-icon class="icons" name="bag-handle-outline"></ion-icon>
+        <ion-label>Mail Service</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>

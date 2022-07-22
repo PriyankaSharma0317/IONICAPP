@@ -1,0 +1,61 @@
+<ion-app>
+  <ion-content color="light">
+    <!-- Header -->
+    <ion-card class="ion-no-margin">
+      <ion-item lines="none" class="ion-padding-top">
+        <ion-icon color="primary" slot="start" name="person"></ion-icon>
+        <ion-icon color="tertiary" slot="end" size="large" name="add-circle" (click)="presentModal()" *ngIf="showIcon">
+        </ion-icon>
+      </ion-item>
+
+      <!-- Header Title -->
+      <ion-card-header>
+        <ion-card-title class="title" *ngIf="!roomTitle">{{room|titlecase}}</ion-card-title>
+        <ion-card-title class="title" *ngIf="roomTitle">{{roomTitle|titlecase}}</ion-card-title>
+        <ion-card-subtitle class="subtitle">{{count}} {{count > 1 ? 'devices are active now' : 'device is active now'}}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+    <!-- Segment Area -->
+    <ion-segment mode="ios" class="segment" scrollable="true" [value]="room" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="All Devices" class="segmentBtn" (click)="displayAllDevices()">
+        <ion-label>All Devices</ion-label>
+      </ion-segment-button>
+      <ion-segment-button *ngFor="let data of segmentData" class="segmentBtn" [value]="data.title"
+        (click)="displayDevices(data)">
+        <ion-label>{{data.title}}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <!-- Nothing to display -->
+    <div id="display" *ngIf="show">
+      <ion-icon id="add" size="large" name="duplicate-outline"></ion-icon>
+      <ion-label class="ion-margin-vertical">No devices</ion-label>
+      <ion-button (click)="presentModal()" id="btn">Add device</ion-button>
+    </div>
+
+    <!-- Footer -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" *ngFor="let res of electronicDevice">
+          <ion-card id="devices">
+            <ion-img id="deviceImage" [src]="res.icon"></ion-img>
+            <div id="text">
+              <ion-card-title id="deviceTitle">{{res.name|titlecase}}
+              </ion-card-title>
+              <ion-card-subtitle id="deviceSubTitle" *ngIf="showSubTitle">{{res.roomName}}
+              </ion-card-subtitle>
+            </div>
+            <div id="buttons">
+              <ion-icon size="small" [ngClass]="res.toggle ? 'powerBtn active' :'powerBtn'" name="power-outline"
+                (click)="togglebtn(res._id,res)"></ion-icon>
+              <ion-icon id="deleteBtn" (click)="deleteDevice($event,res._id)" name="trash-outline"></ion-icon>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>
+</ion-app>

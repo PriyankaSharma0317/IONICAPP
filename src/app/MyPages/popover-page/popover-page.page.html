@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-title class="ion-margin-top ion-text-center">Edit Nickname</ion-title>
+  <form [formGroup]="nickName" (ngSubmit)="save(nickName.value)">
+    <ion-item class="ion-margin-bottom">
+      <ion-input formControlName="nickname" [value]="name"></ion-input>
+      <ion-icon size="small" (click)="clear()" name="close-circle-outline"></ion-icon>
+    </ion-item>
+    <ion-list class="ion-margin-horizontal">
+      <ion-button (click)="cancel()" color="none">Cancel</ion-button>
+      <ion-button [disabled]="nickName.invalid" type="submit" color="none">Save</ion-button>
+    </ion-list>
+  </form>
+
+</ion-content>

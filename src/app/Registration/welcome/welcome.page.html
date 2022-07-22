@@ -1,0 +1,24 @@
+<ion-app>
+  <ion-content>
+    <!-- Logo -->
+      <app-logo></app-logo>
+
+      <!-- Image -->
+      <ion-img id="image" src="./assets/images/L.jpg"></ion-img>
+
+      <!-- Header -->
+      <ion-text class="ion-text-center">
+        <h3>Welcome</h3>
+        <p>Create an account and access thousand of cool stuffs.</p>
+      </ion-text>
+
+      <!-- Started -->
+      <ion-button routerLink="/signup" class="ion-margin" size="block">Getting Started</ion-button>
+      <ion-text class="ion-text-center">
+        <p>Already have an account ? <ion-text><b routerLink="/login">Log In</b></ion-text>
+        </p>
+      </ion-text>
+      <!-- Social Media -->
+      <app-social-media></app-social-media>
+  </ion-content>
+</ion-app>

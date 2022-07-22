@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar mode="md" color="light" class="ion-padding-top">
+    <ion-title color="primary">{{edit ? 'Edit Room': 'Add Room'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="ion-margin" [formGroup]="room" (ngSubmit)="submit(room.value)">
+    <ion-input id="title" class="ion-padding-horizontal ion-margin-vertical" type="text" placeholder="Room Title"
+      formControlName="title"></ion-input>
+
+    <ion-input formControlName="icon" [value]="icons">
+      <ion-thumbnail slot="start" *ngIf="icons">
+        <ion-img [src]="iconObj.icon"></ion-img>
+      </ion-thumbnail>
+    </ion-input>
+
+    <ion-button size="block" (click)="presentModal()" class="ion-margin-bottom">Select Image</ion-button>
+
+    <ion-button *ngIf="!edit" type="submit">Submit</ion-button>
+    <ion-button *ngIf="edit" (click)="updateRoom(room.value)">Update</ion-button>
+    <ion-button (click)="dismissModal()">Cancel</ion-button>
+
+  </form>
+</ion-content>

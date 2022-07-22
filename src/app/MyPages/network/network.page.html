@@ -1,0 +1,69 @@
+<!-- Back Button -->
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button class="ion-text-capitalise" color="dark" defaultHref="/smart-appl" text="Cancel" icon="none"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-app >
+  <ion-content color="light">
+
+    <!-- Header -->
+    <ion-card class="header">
+      <h2>Select 2.4 GHz Wi-Fi Network and enter password.</h2>
+      <p>If your Wi-Fi is 5GHz, please set it to be 2.4GHz.</p>
+      <a href="">Common router setting method</a>
+
+      <!-- Network -->
+      <ion-card class="network">
+        <ion-list lines="none">
+          <!-- 1st -->
+          <ion-item>
+            <ion-icon color="danger" size="small" name="close"></ion-icon>
+            <ion-label>Wi-Fi - 5GHz</ion-label>
+            <div slot="end" class="sideIcon"></div>
+          </ion-item>
+
+          <!-- 2nd -->
+          <ion-item class="active">
+            <ion-icon color="success" size="small" name="checkmark-outline"></ion-icon>
+            <ion-label>Wi-Fi - <b>2.4GHz</b></ion-label>
+            <div id="icons">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-icon name="wifi-outline"></ion-icon>
+              <ion-icon color="success" name="alert-circle-outline"></ion-icon>
+            </div>
+          </ion-item>
+
+          <!-- 3rd -->
+          <ion-item>
+            <div class="icon"></div>
+            <div slot="end" class="sideIcon"></div>
+          </ion-item>
+
+          <!-- 4th -->
+          <ion-item>
+            <div class="icon"></div>
+            <div slot="end" class="sideIcon"></div>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+      <!--Wi-Fi-->
+      <ion-list>
+        <ion-item>
+          <ion-icon class="ion-margin-horizontal" name="wifi-outline"></ion-icon>
+          <ion-label>Techno 2.4</ion-label>
+          <ion-icon class="wifi" name="swap-horizontal-outline"></ion-icon>
+        </ion-item>
+        <ion-item lines="none" class="wifi">
+          <ion-icon class="ion-margin-horizontal" name="lock-closed-outline"></ion-icon>
+          <ion-input placeholder="Password"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Button -->
+      <ion-button color="danger">Next</ion-button>
+    </ion-card>
+  </ion-content>
+</ion-app>
